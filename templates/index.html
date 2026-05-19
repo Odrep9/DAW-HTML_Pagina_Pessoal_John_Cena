@@ -1,65 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bancada</title>
-
-    <script src="script.js" defer></script>
-</head>
-
-<body>
-
-    <h1>Bancada</h1>
-
-    <p>Selecione um lugar</p>
-
-    <table border="1">
-
-        <tr>
-            <td class="lugar">1</td>
-            <td class="lugar">2</td>
-            <td class="lugar">3</td>
-            <td class="lugar">4</td>
-            <td class="lugar">5</td>
-        </tr>
-
-        <tr>
-            <td class="lugar">6</td>
-            <td class="lugar">7</td>
-            <td class="lugar">8</td>
-            <td class="lugar">9</td>
-            <td class="lugar">10</td>
-        </tr>
-
-        <tr>
-            <td class="lugar">11</td>
-            <td class="lugar">12</td>
-            <td class="lugar">13</td>
-            <td class="lugar">14</td>
-            <td class="lugar">15</td>
-        </tr>
-
-        <tr>
-            <td class="lugar">16</td>
-            <td class="lugar">17</td>
-            <td class="lugar">18</td>
-            <td class="lugar">19</td>
-            <td class="lugar">20</td>
-        </tr>
-
-    </table>
-
-    <h2>
-        Lugar selecionado:
-        <span id="lugarSelecionado">Nenhum</span>
-    </h2>
-
-    <button id="botaoComprar">
-        Comprar
-    </button>
-
-</body>
-
-</html>
+{% extends "layout.html" %} {% block title %} <h2>Página Inicial</h2> {% endblock %} {% block content %} <main> <img
+        class="foto-cena" src="{{ url_for('static', filename='images/John_Cena.webp') }}" alt="Fotografia de John Cena">
+    <p>
+        John Cena é um lutador profissional, ator e rapper americano. Ele é conhecido pela sua carreira na WWE, onde
+        se tornou um dos maiores nomes da história do wrestling. Cena é famoso pelo seu carisma, força física e
+        habilidades no ringue, além da sua frase de efeito "You can't see me". Fora do wrestling, ele também teve
+        sucesso como ator em filmes e programas de televisão.
+    </p>
+</main>
+<section id="contador-seccao">
+    <h2>Contador de Cliques</h2>
+    <p>Número de cliques: <span id="contador">0</span></p> <button id="botao-incrementar">Clique Aqui!</button> <button
+        id="botao-reset">Reiniciar</button>
+</section>
+<section id="relogio-seccao">
+    <h2>Relógio Digital</h2>
+    <div id="relogio">00:00:00</div>
+    <p class="subtitle">Hoje é {{ day }}!</p>
+</section> {% endblock %}
